@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🎂 عيد ميلاد سعيد</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+  <!-- الحاوية اللي بمقاس الموبايل -->
+  <div class="app-container">
+
+    <!-- ===== الشاشة الأولى ===== -->
+    <section id="screen1" class="screen active">
+      <div class="hearts"></div>
+
+      <div class="cake-wrapper">
+        <div class="candles">
+          <div class="candle-number">
+            <div class="flame"></div>
+            <span class="num">2</span>
+          </div>
+          <div class="candle-number">
+            <div class="flame"></div>
+            <span class="num">5</span>
+          </div>
+        </div>
+
+        <div class="cake">
+          <div class="tier tier-top">
+            <div class="chocolate"></div>
+            <div class="toppings">
+              <div class="cherry" style="left: 15%;"></div>
+              <div class="cherry" style="left: 50%;"></div>
+              <div class="cherry" style="left: 82%;"></div>
+              <span class="sprinkle" style="left: 5%;  top: 55%; background:#ffeb3b;"></span>
+              <span class="sprinkle" style="left: 28%; top: 65%; background:#ff6b9d;"></span>
+              <span class="sprinkle" style="left: 42%; top: 50%; background:#4fc3f7;"></span>
+              <span class="sprinkle" style="left: 62%; top: 62%; background:#81c784;"></span>
+              <span class="sprinkle" style="left: 78%; top: 52%; background:#ffb74d;"></span>
+              <span class="sprinkle" style="left: 92%; top: 60%; background:#ba68c8;"></span>
+            </div>
+          </div>
+
+          <div class="tier tier-middle">
+            <div class="chocolate"></div>
+            <div class="toppings">
+              <span class="sprinkle" style="left: 8%;  top: 60%; background:#ffeb3b;"></span>
+              <span class="sprinkle" style="left: 22%; top: 45%; background:#ff6b9d;"></span>
+              <span class="sprinkle" style="left: 38%; top: 62%; background:#4fc3f7;"></span>
+              <span class="sprinkle" style="left: 55%; top: 48%; background:#81c784;"></span>
+              <span class="sprinkle" style="left: 70%; top: 58%; background:#ffb74d;"></span>
+              <span class="sprinkle" style="left: 85%; top: 45%; background:#ba68c8;"></span>
+            </div>
+          </div>
+
+          <div class="tier tier-bottom">
+            <div class="chocolate"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="countdown" id="countdown">5</div>
+            <h2 id="bdayMsg" class="bday-msg"></h2>
+      <button class="btn next-btn" id="nextBtn1">❤️NEXT</button>
+    </section>
+
+    <!-- ===== الشاشة التانية (الرسالة) ===== -->
+    <section id="screen2" class="screen">
+      <div class="message-card">
+        <div class="message-title">
+          <h2>كل سنة و انت عمري ✨</h2>
+        </div>
+        <div class="message-body">
+          <p>كل سنة و انتَ طيب يا عمري  يا اغلى من عمري❤️.
+انتَ عارف انا بحبك قد ايه و قد ايه بثق فيك و بحس ب امان و انا معاك و عارف اني ساندة عليك و بقوى بيك❤️.
+بتمنى من قلبي اني دايمًا اشوفك في نجاح و دايمًا تفضل مبسوط و بالك مرتاح ، انا عارفة انك تعبان و في حاجات متقدرش تشاركها معايا بس انا معاك دايمًا حتى لو ساكتين و حتى لو في القاع هتلاقيني دايمًا معاك و في ضهرك .
+انا اه قولتلك اني ساندة عليك لكن انا اقدر اسندك و اوقف في ضهرك وقت ما تحتاجني .
+انا دايمًا هختارك في الوحش قبل الحلو و لو رجع بيا الزمن الف مرة هختار اني احبك و هختارك كل مرة بلا تفكير لأنك حبيبي و حب عمري❤️.
+اتمنى ان بالك دايمًا يكون مرتاح و تكون نفسيتك كويسة و اتمنى تجيب العربية  الي نفسك فيها و تعيش الحياة الي بتتمناها و تكون الخير ليك و الراحة و تفضل مع الناس الي بتحبك و الي بتحبها.
+انا فخورة بكل الي انتَ عديت بيه و فخورة انك بتحاول دايمًا تسعى انك توصل لاحسن نسخة فيك و انا بحبك بكل حاجة فيك ❤️.
+كل سنة و انتَ بخير يا حبيبي ❤️❤️ </p>
+        </div>
+      </div>
+
+      <!-- مشغل الأغنية المخصص -->
+      <div class="custom-audio" data-src="assets/enta omry2.mp3">
+        <input type="range" class="seek-bar" value="0" max="100">
+        <div class="time-display">
+          <span class="current">0:00</span>
+          <span class="total">0:00</span>
+        </div>
+        <div class="audio-controls">
+          <button class="play-pause">
+            <svg viewBox="0 0 24 24" class="icon-play"><path d="M8 5v14l11-7z"/></svg>
+            <svg viewBox="0 0 24 24" class="icon-pause" style="display:none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <button class="btn next-btn" id="nextBtn2">❤️NEXT</button>
+    </section>
+
+    <!-- ===== الشاشة التالتة (صورته) ===== -->
+    <section id="screen3" class="screen">
+      <div class="photo-frame">
+        <img src="assets/him.jpg" alt="صورته">
+      </div>
+
+            <div class="custom-audio" id="screen3Audio" data-src="assets/hbd.mp3">
+        <input type="range" class="seek-bar" value="0" max="100">
+        <div class="time-display">
+          <span class="current">0:00</span>
+          <span class="total">0:00</span>
+        </div>
+        <div class="audio-controls">
+          <button class="play-pause">
+            <svg viewBox="0 0 24 24" class="icon-play"><path d="M8 5v14l11-7z"/></svg>
+            <svg viewBox="0 0 24 24" class="icon-pause" style="display:none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <button class="btn next-btn" id="nextBtn3">❤️NEXT</button>
+    </section>
+
+    <!-- ===== الشاشة الرابعة (صورة 1) ===== -->
+    <section id="screen4" class="screen">
+      <div class="photo-frame">
+        <img src="assets/photo1.jpg" alt="إحنا">
+          <div class="photo-date">❤️13/7/2023</div>
+      </div>
+      <div class="custom-audio" data-src="assets/1.mp3">
+        <input type="range" class="seek-bar" value="0" max="100">
+        <div class="time-display"><span class="current">0:00</span><span class="total">0:00</span></div>
+        <div class="audio-controls">
+          <button class="play-pause">
+            <svg viewBox="0 0 24 24" class="icon-play"><path d="M8 5v14l11-7z"/></svg>
+            <svg viewBox="0 0 24 24" class="icon-pause" style="display:none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+          </button>
+        </div>
+      </div>
+      <button class="btn next-btn" id="nextBtn4">❤️NEXT</button>
+    </section>
+
+    <!-- ===== الشاشة الخامسة (صورة 2) ===== -->
+    <section id="screen5" class="screen">
+      <div class="photo-frame">
+        <img src="assets/photo2.jpg" alt="إحنا">
+          <div class="photo-date">❤️21/2/2026</div>
+      </div>
+      <div class="custom-audio" data-src="assets/2.mp3">
+        <input type="range" class="seek-bar" value="0" max="100">
+        <div class="time-display"><span class="current">0:00</span><span class="total">0:00</span></div>
+        <div class="audio-controls">
+          <button class="play-pause">
+            <svg viewBox="0 0 24 24" class="icon-play"><path d="M8 5v14l11-7z"/></svg>
+            <svg viewBox="0 0 24 24" class="icon-pause" style="display:none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+          </button>
+        </div>
+      </div>
+      <button class="btn next-btn" id="nextBtn5">❤️NEXT</button>
+    </section>
+
+    <!-- ===== الشاشة السادسة (صورة 3) ===== -->
+    <section id="screen6" class="screen">
+      <div class="photo-frame">
+        <img src="assets/photo3.jpg" alt="إحنا">
+          <div class="photo-date">❤️12/3/2026</div>
+      </div>
+      <div class="custom-audio" data-src="assets/3.mp3">
+        <input type="range" class="seek-bar" value="0" max="100">
+        <div class="time-display"><span class="current">0:00</span><span class="total">0:00</span></div>
+        <div class="audio-controls">
+          <button class="play-pause">
+            <svg viewBox="0 0 24 24" class="icon-play"><path d="M8 5v14l11-7z"/></svg>
+            <svg viewBox="0 0 24 24" class="icon-pause" style="display:none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+          </button>
+        </div>
+      </div>
+      <button class="btn next-btn" id="nextBtn6">❤️NEXT</button>
+    </section>
+
+    <!-- ===== الشاشة السابعة (صورة 4) ===== -->
+    <section id="screen7" class="screen">
+      <div class="photo-frame">
+        <img src="assets/photo4.jpg" alt="إحنا">
+          <div class="photo-date">❤️21/2/2026</div>
+      </div>
+      <div class="custom-audio" data-src="assets/4.mp3">
+        <input type="range" class="seek-bar" value="0" max="100">
+        <div class="time-display"><span class="current">0:00</span><span class="total">0:00</span></div>
+        <div class="audio-controls">
+          <button class="play-pause">
+            <svg viewBox="0 0 24 24" class="icon-play"><path d="M8 5v14l11-7z"/></svg>
+            <svg viewBox="0 0 24 24" class="icon-pause" style="display:none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+          </button>
+        </div>
+      </div>
+      <button class="btn next-btn" id="nextBtn7">❤️NEXT</button>
+    </section>
+
+    <!-- ===== الشاشة الثامنة (الـ QR) ===== -->
+    <section id="screen8" class="screen">
+      <h2 class="qr-title">❤️Scan</h2>
+      <div class="qr-container">
+        <img src="assets/photo_2026-10-21_15-49-09.jpg" alt="QR Code" class="qr-img">
+      </div>
+      <h2 class="love-text">بحبك ❤️❤️</h2>
+    </section>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
